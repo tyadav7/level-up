@@ -25,14 +25,14 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": 
-            [
-              "src/_redirects",
+            "assets": [
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
+              },
               "src/favicon.ico",
               "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -91,11 +91,13 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
+              },
               "src/favicon.ico",
               "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
             ],
             "scripts": []
           }
