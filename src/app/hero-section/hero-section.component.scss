@@ -1,4 +1,7 @@
 .background-image {
+    background-repeat: no-repeat;
+    background-position: top center; /* Center the image horizontally and vertically */
+    background-size: contain; 
     background-size: cover;
 }
 
