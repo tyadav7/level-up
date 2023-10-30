@@ -1,6 +1,9 @@
 <section class="bg-white l:bg-gray-900 background-slider">
-    <div class="background-image ease-in-out duration-[3000ms]" [ngStyle]="{'background-image': 'url('+currentImageUrl+')'}">
-        <div class="background-mask">
+    <div class="relative">
+        <ng-container *ngFor="let url of images">
+            <img [ngClass]="url === currentImageUrl ? 'opacity-100' : 'opacity-0'" class="absolute object-cover object-top w-full h-full ease-in-out duration-[3000ms]" [ngSrc]="url" priority fill>
+        </ng-container>
+        <div class="relative bg-black bg-opacity-60">
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                 <a href="#"
                     class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"

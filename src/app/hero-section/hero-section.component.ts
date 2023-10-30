@@ -30,7 +30,8 @@ export class HeroSectionComponent implements AfterViewInit {
   startAutoPlay() {
     setInterval(() => {
       this._currentImage = (this._currentImage + 1) % this.images.length;
-    }, 10000); // Change images every 3 seconds
+      console.log(this._currentImage);
+    }, 4000); // Change images every 3 seconds
   }
 
 }
