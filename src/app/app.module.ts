@@ -9,8 +9,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { NgOptimizedImage } from '@angular/common';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     AppRoutingModule,
     NgOptimizedImage,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
