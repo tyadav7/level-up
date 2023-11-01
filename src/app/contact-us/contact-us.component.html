@@ -57,21 +57,23 @@
                             class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
                             message</button>
                     </form>
-                    <div class="space-y-8 flex flex-col justify-center items-center" [@fade]
-                        *ngIf="recorded || isSuccess">
+                    <div class="space-y-8 flex flex-col justify-center items-center" *ngIf="isSuccess || recorded">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="154px" height="154px" viewBox="0 0 154 154" class="animate-[ping_0.3s_ease-in_1s] stroke-current stroke-2 text-blue-600" style="animation-direction: reverse;" *ngIf="isSuccess">
                                 <g fill="none" class="stroke-current stroke-2 text-blue-600">
-                                    <circle cx="77" cy="77" r="72" stroke-width="10" class=" text-gray-400">
+                                    <circle id="colored" cx="77" cy="77" r="72" fill="rgb(37 99 235)">
                                     </circle>
-                                    <path d="M77 5 A72 72 0 0 1 149 77" stroke-width="10"
-                                        class="origin-center animate-spin ng-tns-c2193393451-0 text-blue-600"
-                                        *ngIf="recorded"></path>
-                                    <circle id="colored" cx="77" cy="77" r="72" class=" fill-blue-600" [@fade]
-                                        *ngIf="isSuccess">
-                                    </circle>
-                                    <polyline class=" text-white" stroke-width="10"
-                                        points="43.5,77.8 63.7,97.9 112.2,49.4" [@fade] *ngIf="isSuccess"></polyline>
+                                    <polyline stroke="white" stroke-width="10"
+                                        points="43.5,77.8 63.7,97.9 112.2,49.4"></polyline>
+                                </g>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px" viewBox="0 0 154 154"
+                                class="origin-center animate-spin" *ngIf="recorded">
+                                <g fill="none" class="stroke-current stroke-2 text-blue-600">
+                                    <circle cx="77" cy="77" r="72" stroke="rgb(156 163 175)" stroke-width="10"
+                                        fill="none"></circle>
+                                    <path d="M77 5 A72 72 0 0 1 149 77" stroke-width="10" stroke="#2563EB" fill="none">
+                                    </path>
                                 </g>
                             </svg>
                         </div>

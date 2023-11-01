@@ -8,21 +8,26 @@ import { take } from 'rxjs/operators';
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss'],
-  animations: [
-    trigger('fade', [
-      state('void', style({ opacity: 0 })), // initial state
-      state('*', style({ opacity: 1 })), // final state
-      transition('void <=> *', animate('0.3s ease')), // transition
-    ]),
-  ],
 })
 export class ContactUsComponent {
 
   recorded:boolean = false;
   isSuccess:boolean = false;
+  rotationAngle: number = 0;
+
+  // Function to change the rotation angle
+  rotate() {
+    this.rotationAngle += 45; // Change the angle as needed
+  }
 
   constructor(private httpClient: HttpClient) {
+    this.startRotation();
+  }
 
+  startRotation() {
+    setInterval(() => {
+      this.rotationAngle += 45; // Adjust the rotation speed and angle as needed
+    }, 1000); // Adjust the interval as needed (e.g., 1000ms for a 1-second interval)
   }
 
   onSubmit(form: NgForm) {
