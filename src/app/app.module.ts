@@ -10,13 +10,17 @@ import { NgOptimizedImage } from '@angular/common';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './footer/footer.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HeroSectionComponent,
     TestimonialsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FooterComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
