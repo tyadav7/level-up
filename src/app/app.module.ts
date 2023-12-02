@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ProgramsComponent } from './programs/programs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     TestimonialsComponent,
     ContactUsComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ProgramsComponent
   ],
   imports: [
     BrowserModule,
