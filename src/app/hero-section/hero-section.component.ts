@@ -10,13 +10,13 @@ import { Component, AfterViewInit } from '@angular/core';
 export class HeroSectionComponent implements AfterViewInit {
 
   imagesFolder: string = '../../assets/img/';
-  imagesCount: number = 9;
+  allowedImages = [1,3,4,5,6,7];
 
   private _currentImageCount = 1;
   private _images: string[];
 
   constructor() {
-    this._images = Array.from(Array(this.imagesCount).keys()).map((x) => this.imagesFolder + (x + 1) + ".jpg");
+    this._images = this.allowedImages.map((x) => this.imagesFolder + (x) + ".jpg");
   }
 
   ngAfterViewInit(): void {
@@ -34,7 +34,7 @@ export class HeroSectionComponent implements AfterViewInit {
 
   startAutoPlay() {
     setInterval(() => {
-      this._currentImageCount = (this._currentImageCount + 1) % this.imagesCount;
+      this._currentImageCount = (this._currentImageCount + 1) % this.allowedImages.length;
       console.log(this._currentImageCount);
     }, 4000); // Change images every 3 seconds
   }
