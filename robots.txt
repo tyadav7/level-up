@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /private/
+Disallow: /restricted/
+
+User-agent: Googlebot
+Allow: /public/
+Disallow: /private/
+Disallow: /restricted/
+
+Sitemap: https://www.levelupwithjatin.com/sitemap.xml
