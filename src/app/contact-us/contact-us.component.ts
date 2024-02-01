@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { take } from 'rxjs/operators';
 
@@ -20,8 +21,10 @@ export class ContactUsComponent {
     this.rotationAngle += 45; // Change the angle as needed
   }
 
-  constructor(private httpClient: HttpClient) {
-    this.startRotation();
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private httpClient: HttpClient) {
+    if (isPlatformBrowser(this.platformId)) { 
+      this.startRotation();
+    }
   }
 
   startRotation() {

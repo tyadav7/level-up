@@ -1,7 +1,7 @@
 <section class="bg-white l:bg-gray-900 background-slider">
     <div class="relative">
         <ng-container *ngFor="let url of images">
-            <img [ngClass]="url === currentImageUrl ? 'opacity-100' : 'opacity-0'" class="absolute object-cover object-top w-full h-full transition-opacity ease-in-out duration-[3000ms]" [ngSrc]="url" priority fill>
+            <img [ngClass]="url === currentImageUrl ? 'opacity-100' : 'opacity-0'" class="absolute object-cover object-top w-full h-full transition-opacity ease-in-out duration-[3000ms]" [ngSrc]="url" fill>
         </ng-container>
         <div class="relative bg-black bg-opacity-60 h-[75vh]">
             <div class="flex h-full flex-col justify-center items-center py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">

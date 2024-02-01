@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Subscription, interval, tap } from 'rxjs';
 
 @Component({
@@ -8,6 +9,9 @@ import { Subscription, interval, tap } from 'rxjs';
 })
 export class TestimonialsComponent implements AfterViewInit {
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+
+  }
   carouselSubscription!:Subscription;
   testimonials: TestimonialsContainer[] = [ {
     body: "Jatin, an ex-ATP player, excels in technical coaching. He enhanced my daughter's ball striking, achieving consistency and spin. Kudos for the excellent tournament results. Many thanks!",
@@ -33,8 +37,9 @@ export class TestimonialsComponent implements AfterViewInit {
  ];
 
   ngAfterViewInit(): void {
-
-    this.carouselSubscription = interval(2000).pipe(tap((i) => this.selectedIndex = i%this.testimonials.length)).subscribe();
+    if (isPlatformBrowser(this.platformId)) { 
+      this.carouselSubscription = interval(2000).pipe(tap((i) => this.selectedIndex = i%this.testimonials.length)).subscribe();
+    }
   }
 
   selectedIndex = 0;

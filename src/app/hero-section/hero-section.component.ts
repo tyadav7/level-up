@@ -1,5 +1,6 @@
 import { trigger, transition, animate, style } from '@angular/animations';
-import { Component, AfterViewInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-hero-section',
@@ -15,12 +16,14 @@ export class HeroSectionComponent implements AfterViewInit {
   private _currentImageCount = 1;
   private _images: string[];
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this._images = this.allowedImages.map((x) => this.imagesFolder + (x) + ".jpg");
   }
 
   ngAfterViewInit(): void {
-    this.startAutoPlay();
+    if (isPlatformBrowser(this.platformId)) { 
+      this.startAutoPlay();
+    }     
   }
   
 
